@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>EA Real Estate</title>
+    <!-- replace with company icon -->
+    <link rel="shortcut icon" type="image/png" href="img/crown.png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navbar starts here -->
+    <div class="navbar">
+      <input type="checkbox" class="checkbox" id="click" hidden />
+      <!-- sidebar starts here -->
+      <div class="sidebar">
+        <label for="click">
+          <div class="menu-icon">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </div>
+        </label>
+        <ul class="social-icons-list">
+          <li>
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social-link"><i class="fab fa-google"></i></a>
+          </li>
+          <li>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <div class="year">
+          <p>Dubai</p>
+        </div>
+      </div>
+      <!-- sidebar ends here -->
+      <!-- navigation -->
+      <nav class="navigation">
+        <div class="navigation-header">
+          <h1 class="navigation-heading">EA Real Estate</h1>
+          <form class="navigation-search">
+            <input
+              type="text"
+              class="navigation-search-input"
+              placeholder="Search..."
+            />
+            <button class="navigation-search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="navigation-list">
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">home</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#about-us" class="navigation-link">about us</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link enquire-btn" onclick="openForm()"
+              >Enquire</a
+            >
+          </li>
+        </ul>
+        <div class="copyright">
+          <p>&copy; 2023. EA Real Estate. All rights reserved</p>
+        </div>
+      </nav>
+      <!-- end of navigation -->
+    </div>
+    <!-- navbvar ends here -->
+
+    <!-- header starts here -->
+    <header class="header">
+      <div class="brand">
+        <img src="./img/crown.png" width="80" />
+        <h3 class="hotel-heading">EA Real Estate</h3>
+      </div>
+      <div class="banner">
+        <h1 class="banner-heading">Welcome to EA Real Estate</h1>
+        <p class="banner-paragraph">make your life luxurious and profitable</p>
+        <p class="banner-sub-paragraph">
+          Unlock tax-free income and high ROI in one of the world's safest, most
+          prosperous cities.
+        </p>
+        <p class="banner-sub-paragraph">
+          Luxury investment opportunities with average down-payments starting
+          from £30,000
+        </p>
+        <button class="banner-button enquire-btn" onclick="openForm()">
+          Enquire
+        </button>
+      </div>
+      <!-- Enquiry Form Section -->
+      <div id="overlay" class="overlay hidden" onclick="closeForm(event)">
+        <div
+          id="enquiry-container"
+          class="enquiry-container"
+          onclick="event.stopPropagation()"
+        >
+          <span class="close-btn" onclick="closeForm(event)">&times;</span>
+          <h2 class="enquiry-heading">Enquire Now</h2>
+          <form class="enquiry-form" onsubmit="sendEmail(event)">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                class="form-input"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                id="email"
+                class="form-input"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                id="phone"
+                class="form-input"
+                placeholder="Your Phone"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <select id="contactTime" class="form-input" required>
+                <option value="" disabled selected>
+                  Preferred Contact Time
+                </option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                class="form-textarea"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="form-button">Submit</button>
+          </form>
+        </div>
+      </div>
+    </header>
+    <!-- header ends here -->
+
+    <!-- about us -->
+    <section id="about-us" class="about-us">
+      <div class="about-us-content">
+        <h1 class="about-us-heading">About Us</h1>
+        <div class="underline">
+          <div class="small-underline"></div>
+          <div class="big-underline"></div>
+        </div>
+        <h3 class="sub-heading">EA Real Estate</h3>
+        <ul class="about-us-list">
+          <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>
+            Atque molestias facilis sint, suscipit molestiae necessitatibus.
+          </li>
+          <li>Amet ut sequi minima labore at, ex unde.</li>
+          <li>
+            Tempore, excepturi alias molestias tenetur laborum neque veritatis.
+          </li>
+          <li>
+            Labore id temporibus sequi, ab illo facere voluptas placeat sunt.
+          </li>
+          <li>
+            Expedita porro hic recusandae voluptatibus ducimus doloribus iusto
+            possimus.
+          </li>
+        </ul>
+        <button class="about-us-btn">
+          Read More
+          <i class="fas fa-angle-double-right btn-arrow"></i>
+        </button>
+      </div>
+      <div class="about-us-images">
+        <img src="./img/about-us-img-1.jpeg" class="image image-1" />
+        <img src="./img/about-us-img-2.jpeg" class="image image-2" />
+        <img src="./img/about-us-img-3.jpeg" class="image image-3" />
+        <img src="./img/about-us-img-4.jpeg" class="image image-4" />
+      </div>
+    </section>
+    <!-- end of about us -->
+
+    <!-- properties -->
+    <section class="rooms">
+      <div class="common-header">
+        <h1 class="common-heading">Premium EA Real Estates</h1>
+        <div class="underline">
+          <div class="small-underline"></div>
+          <div class="big-underline"></div>
+        </div>
+      </div>
+      <div class="rooms-cards-wrapper">
+        <div class="room-card">
+          <img src="img/RE1.jpg" class="room-img" alt="room-img" />
+          <div class="room-card-content">
+            <h4 class="room-card-heading">First Place</h4>
+            <p class="room-card-paragraph">Lorem ipsum dolor sit amet.</p>
+            <p class="room-price">$XY.00</p>
+            <!-- <button class="room-card-btn">
+              Book Now
+              <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button> -->
+          </div>
+        </div>
+        <div class="room-card">
+          <img src="img/RE1.jpg" class="room-img" alt="double-img" />
+          <div class="room-card-content">
+            <h4 class="room-card-heading">Second Place</h4>
+            <p class="room-card-paragraph">Lorem ipsum dolor sit amet.</p>
+            <p class="room-price">$YZ.00</p>
+            <!-- <button class="room-card-btn">
+              Book Now
+              <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button> -->
+          </div>
+        </div>
+        <div class="room-card">
+          <img src="img/RE2.jpeg" class="room-img" alt="lux-img" />
+          <div class="room-card-content">
+            <h4 class="room-card-heading">Third Place</h4>
+            <p class="room-card-paragraph">Lorem ipsum dolor sit amet.</p>
+            <p class="room-price">$AB.00</p>
+            <!-- <button class="room-card-btn">
+              Book Now
+              <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button> -->
+          </div>
+        </div>
+        <div class="room-card">
+          <img src="img/RE2.jpeg" class="room-img" alt="vip-img" />
+          <div class="room-card-content">
+            <h4 class="room-card-heading">Fourth Place</h4>
+            <p class="room-card-paragraph">Lorem ipsum dolor sit amet.</p>
+            <p class="room-price">$DE.00</p>
+            <!-- <button class="room-card-btn">
+              Book Now
+              <i class="fas fa-angle-double-right btn-arrow"></i>
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <div class="rooms-btn-wrapper">
+        <button class="rooms-btn enquire-btn" onclick="openForm()">
+          Enquire now for more details
+        </button>
+      </div>
+    </section>
+    <!-- end of rooms -->
+    <!-- customers -->
+    <section class="customers">
+      <div class="common-header">
+        <h1 class="common-heading">Our Customers</h1>
+        <div class="underline">
+          <div class="small-underline"></div>
+          <div class="big-underline"></div>
+        </div>
+        <p class="customers-paragraph">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus
+          praesentium ab non dignissimos quae placeat tempore optio assumenda
+          quaerat iure!
+        </p>
+        <div class="customers-card-wrapper">
+          <div class="customer-card">
+            <div class="customer-image-wrapper">
+              <img src="./img/customer-1.jpeg" class="customer-image" alt="" />
+            </div>
+            <div class="customer-info">
+              <h3 class="customer-fullname">John Doe</h3>
+              <p class="customer-paragraph-1">Happy Customer</p>
+              <p class="customer-paragraph-2">
+                " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Neque quisquam aspernatur earum blanditiis qui deserunt fuga
+                iusto amet perspiciatis eius?"
+              </p>
+            </div>
+          </div>
+          <div class="customer-card">
+            <div class="customer-image-wrapper">
+              <img src="./img/customer-2.jpeg" class="customer-image" alt="" />
+            </div>
+            <div class="customer-info">
+              <h3 class="customer-fullname">Mica Singh</h3>
+              <p class="customer-paragraph-1">Happy Customer</p>
+              <p class="customer-paragraph-2">
+                " Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Neque quisquam aspernatur earum blanditiis qui deserunt fuga
+                iusto amet perspiciatis eius?"
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of customers -->
+    <!-- footer  -->
+    <footer class="footer">
+      <div class="main-part">
+        <div class="footer-list-wrapper">
+          <h3 class="footer-heading">EA Real Estate</h3>
+          <ul class="footer-list">
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="">eareal@xyz.com</a>
+            </li>
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="">Abu Dhabi main street</a>
+            </li>
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="">+123456789</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-list-wrapper">
+          <h3 class="footer-heading">Explore</h3>
+          <ul class="footer-list">
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="">Home</a>
+            </li>
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="#about-us">About Us</a>
+            </li>
+            <li class="footer-list-items">
+              <a class="footer-list-link" href="">Enquire</a>
+            </li>
+          </ul>
+        </div>
+        <div class="gallery">
+          <h3 class="footer-heading">Gallery</h3>
+          <div class="gallery-images">
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-1.jpeg" class="footer-image" alt="" />
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-2.jpeg" class="footer-image" alt="" />
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-3.jpeg" class="footer-image" alt="" />
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-4.jpeg" class="footer-image" alt="" />
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-5.jpeg" class="footer-image" alt="" />
+            </div>
+            <div class="image-wrapper">
+              <img src="./img/gallery-img-6.jpeg" class="footer-image" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- end of footer -->
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    function openForm() {
+      document.getElementById("overlay").classList.add("active");
+      document.body.classList.add("no-scroll");
+    }
+
+    function closeForm(event) {
+      if (
+        event.target.id === "overlay" ||
+        event.target.classList.contains("close-btn")
+      ) {
+        document.getElementById("overlay").classList.remove("active");
+        document.body.classList.remove("no-scroll");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      emailjs.init("RC4hIVU89hRvokfhF"); // Replace with your EmailJS User ID
+    });
+
+    function sendEmail(event) {
+      event.preventDefault();
+
+      emailjs
+        .send("service_lwj5yk4", "template_97nh4we", {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          phone: document.getElementById("phone").value,
+          contactTime: document.getElementById("contactTime").value,
+          message: document.getElementById("message").value,
+        })
+        .then(
+          function (response) {
+            alert("Your enquiry has been sent successfully!");
+            closeForm({ target: { id: "overlay" } });
+          },
+          function (error) {
+            console.log("Error:", error);
+            alert("Failed to send enquiry. Please try again.");
+          }
+        );
+    }
+  </script>
+</html>
